@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "New_Library")(type "KiCad")(uri "${KIPRJMOD}/libraries/New_Library.kicad_sym")(options "")(descr "Custom symbols: MAX30102 module, SSD1306 OLED module"))
+)

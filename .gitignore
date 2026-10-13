@@ -1,0 +1,23 @@
+# KiCad per-user and temporary files
+*.kicad_prl
+*.lck
+*-backups/
+*-bak
+*.bak
+*.kicad_sch-bak
+*.kicad_pcb-bak
+_autosave-*
+\#auto_saved_files\#
+fp-info-cache
+*.zip
+
+# Generated outputs (keep finished fabrication files under fabrication/ only)
+*.gbr
+*.drl
+*.gbrjob
+!fabrication/**
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
