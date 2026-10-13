@@ -15,7 +15,7 @@ fp-info-cache
 *.gbr
 *.drl
 *.gbrjob
-!fabrication/**
+!**/fabrication/**
 
 # OS / editor
 .DS_Store
