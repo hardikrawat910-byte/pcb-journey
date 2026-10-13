@@ -16,10 +16,15 @@ An earlier version of this review said that R1, R2 and R3 were not routed. That 
 The stackup used to have four copper layers (F.Cu, In1.Cu, In2.Cu, B.Cu) with the inner two empty, which would have been priced as a 4-layer board. It is now 2 layers, 1.6 mm FR-4.
 
 ### 4. Pull-ups changed to 10 kΩ ✅
-With 1 kΩ × 100 nF the debounce time constant was only 0.1 ms, and a held button drew 5 mA. R1–R3 are now 10 kΩ on the PCB, which gives 1 ms and 0.5 mA. R4, the LED resistor, stays at 1 kΩ. **The schematic still needs the same change.** Otherwise the next "Update PCB from Schematic" sets them back to 1 kΩ.
+With 1 kΩ × 100 nF the debounce time constant was only 0.1 ms, and a held button drew 5 mA. R1–R3 are now 10 kΩ in both the schematic and the PCB, which gives 1 ms and 0.5 mA. R4, the LED resistor, stays at 1 kΩ.
 
 ### 5. OLED footprint value fixed ✅
-U2 now shows "OLED" instead of "Untitled".
+U2 now shows "OLED" instead of "Untitled" on the PCB. The schematic still calls it "SSD1306", which a schematic-parity check will flag. That is cosmetic.
+
+### DRC result ✅
+DRC (with zones refilled) reports **0 errors and 0 unconnected items**. See [the screenshot](images/drc_result.png).
+
+It also reports one warning: *Footprint 'SSD1306' does not match copy in library 'Library'*. The footprint on the board has its four pads moved about 0.64 mm up and 0.07 mm left compared with `Library.pretty/SSD1306.kicad_mod`. The 2.54 mm pitch is the same in both. The board copy is the one the tracks are routed to, so **don't** use "Update Footprint from Library" for U2. Instead, save the board's copy back into the library, or exclude the warning.
 
 ## Should fix
 
@@ -47,9 +52,9 @@ No `PWR_FLAG` is placed, so ERC reports "power pin not driven" on GND.
 - [x] All nets connected, including R1–R3 to D2/D3/D4
 - [x] Stackup set to 2 layers
 - [x] R1–R3 changed to 10 kΩ on the PCB
-- [ ] R1–R3 changed to 10 kΩ in the schematic too
+- [x] R1–R3 changed to 10 kΩ in the schematic too
 - [ ] References back in sync with the schematic
 - [ ] ERC: 0 errors
-- [ ] DRC: 0 errors, 0 unconnected items
+- [x] DRC: 0 errors, 0 unconnected items (1 footprint-library warning, see above)
 - [ ] Footprint pin order checked against the real modules
 - [ ] Gerbers and drill files exported to `fabrication/` and checked in a Gerber viewer

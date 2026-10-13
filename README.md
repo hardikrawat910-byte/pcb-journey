@@ -1,6 +1,6 @@
 # Pulse Monitor PCB: my first PCB design
 
-![First PCB](https://img.shields.io/badge/milestone-my%20first%20PCB-ff69b4) ![KiCad](https://img.shields.io/badge/KiCad-9.0-314cb0) ![Layers](https://img.shields.io/badge/board-82%20x%2049%20mm-2ea043) ![Status](https://img.shields.io/badge/status-routed%2C%20pre--order%20checks-yellow)
+![First PCB](https://img.shields.io/badge/milestone-my%20first%20PCB-ff69b4) ![KiCad](https://img.shields.io/badge/KiCad-9.0-314cb0) ![Layers](https://img.shields.io/badge/board-82%20x%2049%20mm-2ea043) ![Status](https://img.shields.io/badge/status-DRC%20clean%2C%20not%20yet%20fabricated-yellowgreen)
 
 This is my first PCB, designed from scratch in KiCad 9. It is a carrier board that joins an **Arduino Nano**, a **MAX30102** heart-rate and SpO₂ sensor, a **0.96" SSD1306 OLED** and three navigation buttons, with an alarm LED. It is laid out for a pulse-monitor build.
 
@@ -9,7 +9,7 @@ Designed by **Hardik Rawat**.
 ![3D render](docs/images/render_3d.png)
 
 > [!NOTE]
-> **Status: routing complete, not yet fabricated.** Every net is connected and the GND pour is filled on both layers. It is a 2-layer board. A few checks remain before ordering, mainly running DRC and confirming the footprints match the real modules. They are listed in [docs/design-review.md](docs/design-review.md), along with a pre-order checklist.
+> **Status: routing complete, not yet fabricated.** Every net is connected and the GND pour is filled on both layers. It is a 2-layer board. DRC passes with 0 errors. Before ordering, the main thing left is to confirm that the header pin order matches the real modules. They are listed in [docs/design-review.md](docs/design-review.md), along with a pre-order checklist.
 
 ---
 
@@ -79,7 +79,8 @@ Suggested order settings: 2 layers, 1.6 mm FR-4, HASL finish, 1 oz copper.
 ## Next steps
 
 - [x] Finish routing and fill the GND pour
-- [ ] Pass the pre-order checks ([design-review.md](docs/design-review.md))
+- [x] Pass DRC (0 errors, 0 unconnected)
+- [ ] Check header pin order against the real modules ([design-review.md](docs/design-review.md))
 - [ ] Export Gerbers and order the first batch
 - [ ] Assemble, test, and add photos of the real board
 - [ ] Write firmware: read the MAX30102, show BPM and SpO₂ on the OLED, and use the buttons for menus and alarm limits
