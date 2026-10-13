@@ -1,0 +1,9 @@
+Reference,Qty,Value,Description,Footprint
+A1,1,Arduino_Nano_v3.x,Arduino Nano v3 (ATmega328P) module,Module:Arduino_Nano
+U1,1,MAX30102,MAX30102 pulse-oximeter / heart-rate sensor module (I2C),Library:MAX30102_Module
+U2,1,SSD1306,0.96 inch 128x64 I2C OLED display module,Library:SSD1306
+"R1,R2,R3",3,1k,Button pull-up resistors (1/4 W axial),Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+R4,1,1k,LED current-limiting resistor (1/4 W axial),Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+"C1,C2,C3",3,100n,Button debounce capacitors (ceramic disc),Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm
+"MENU,UP,DOWN",3,SW_Push,6 mm tactile push button (schematic SW1-SW3),Button_Switch_THT:SW_PUSH_6mm
+ALARM,1,LED,5 mm LED (schematic D1),LED_THT:LED_D5.0mm
