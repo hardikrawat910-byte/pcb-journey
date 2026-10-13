@@ -9,8 +9,6 @@
 	(paper "A4")
 	(layers
 		(0 "F.Cu" signal "Front")
-		(4 "In1.Cu" signal)
-		(6 "In2.Cu" signal)
 		(2 "B.Cu" signal "Back")
 		(13 "F.Paste" user)
 		(15 "B.Paste" user)
@@ -42,29 +40,7 @@
 			)
 			(layer "dielectric 1"
 				(type "core")
-				(thickness 0.480066)
-				(material "FR4")
-				(epsilon_r 4.5)
-				(loss_tangent 0.02)
-			)
-			(layer "In1.Cu"
-				(type "copper")
-				(thickness 0.035)
-			)
-			(layer "dielectric 2"
-				(type "prepreg")
-				(thickness 0.480066)
-				(material "FR4")
-				(epsilon_r 4.5)
-				(loss_tangent 0.02)
-			)
-			(layer "In2.Cu"
-				(type "copper")
-				(thickness 0.035)
-			)
-			(layer "dielectric 3"
-				(type "core")
-				(thickness 0.480066)
+				(thickness 1.510198)
 				(material "FR4")
 				(epsilon_r 4.5)
 				(loss_tangent 0.02)
@@ -381,7 +357,7 @@
 				)
 			)
 		)
-		(property "Value" "Untitled"
+		(property "Value" "OLED"
 			(at 0 1 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -582,7 +558,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "10k"
 			(at 3.81 2.37 90)
 			(layer "F.Fab")
 			(uuid "e20e199c-f358-4f28-8d48-5b83dad94db7")
@@ -2438,7 +2414,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "10k"
 			(at 3.81 2.37 90)
 			(layer "F.Fab")
 			(uuid "5b7ec0ef-972d-43ba-bea2-14796dd98d7f")
@@ -2843,7 +2819,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "10k"
 			(at 3.81 2.37 90)
 			(layer "F.Fab")
 			(uuid "7be85961-0722-4bbf-8e0c-8a67d2c5cddf")

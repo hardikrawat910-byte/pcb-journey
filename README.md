@@ -9,7 +9,7 @@ Designed by **Hardik Rawat**.
 ![3D render](docs/images/render_3d.png)
 
 > [!NOTE]
-> **Status: routing complete, not yet fabricated.** Every net is connected and the GND pour is filled on both layers. A few checks remain before ordering, mainly setting the board to 2 copper layers. They are listed in [docs/design-review.md](docs/design-review.md), along with a pre-order checklist.
+> **Status: routing complete, not yet fabricated.** Every net is connected and the GND pour is filled on both layers. It is a 2-layer board. A few checks remain before ordering, mainly running DRC and confirming the footprints match the real modules. They are listed in [docs/design-review.md](docs/design-review.md), along with a pre-order checklist.
 
 ---
 
@@ -20,7 +20,7 @@ Designed by **Hardik Rawat**.
 | Arduino Nano v3 | A1 | Main controller, powered over its USB port |
 | MAX30102 sensor module | U1 | I²C: SDA → A4, SCL → A5; VCC → +5V |
 | SSD1306 OLED module | U2 | I²C: SDA → A4, SCL → A5; VCC → +5V (shared bus) |
-| MENU button | SW1 | D2, with R1 pull-up and C1 debounce cap |
+| MENU button | SW1 | D2, with R1 (10 kΩ) pull-up and C1 debounce cap |
 | UP button | SW2 | D3, with R2 pull-up and C2 debounce cap |
 | DOWN button | SW3 | D4, with R3 pull-up and C3 debounce cap |
 | ALARM LED | D1 | D12 through R4 (1 kΩ) |
@@ -69,7 +69,7 @@ Both modules share one I²C bus. Their addresses don't clash: 0x57 for the MAX30
 
 ## Manufacturing (once the checklist is done)
 
-1. In the PCB editor, set the board to 2 layers, fill the zones (**B**) and run DRC until it shows 0 errors.
+1. In the PCB editor, fill the zones (**B**) and run DRC until it shows 0 errors.
 2. Go to File → Fabrication Outputs → Gerbers, and export F.Cu, B.Cu, F.Mask, B.Mask, F.Silkscreen, B.Silkscreen and Edge.Cuts.
 3. Click **Generate Drill Files** (Excellon, PTH and NPTH merged).
 4. Zip the outputs into `fabrication/` and check them in a Gerber viewer before uploading to a fab house.
